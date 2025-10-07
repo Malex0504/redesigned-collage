@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Big Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <p class="scrambled-text">
+    The answer you seek is often found not in the seeking, but in the resting place between thoughts. 
+    Look to the edge of the known scrollable world.
+    </p>
+
+    <div class="fixed-bg-image"></div>
+    <div class="quest-path"></div>
+    <div class="tiled-stamp-area"></div>
+
+    <img class="detail-dot-a" src="images/small-dot.gif" alt="A small glowing dot">
+    <img class="detail-dot-b" src="images/small-dot.gif" alt="A small glowing dot">
+    <img class="detail-dot-c" src="images/small-dot.gif" alt="A small glowing dot">
+    <img class="detail-dot-d" src="images/small-dot.gif" alt="A small glowing dot">
+    <img class="mysterious-portal" src="images/portal.gif" alt="Mysterious glowing portal">
+    <img class="floating-island" src="images/island.gif" alt="Floating island in the sky">
+    <img class="ancient-symbol" src="images/symbol.png" alt="Ancient mysterious symbol">
+    <img class="boss-reward-image" src="images/final-art.jpg" alt="A dramatic final image">
+    <img class="cat-gif" src="images/my-cat.gif" alt="A gif of my cat">
+    <img class="new-icon" src="images/small-star.png" alt="A small icon">
+    <img id="floating-gif" src="images/waving-hand.gif" alt="A waving hand animation">
+    <img class="large-collage-piece" src="images/abstract-texture.jpg" alt="A large texture piece">
+    <p class="secret-message">You found a secret!</p>
+    <img class="big-image" src="images/another-image.jpg" alt="A large scenic photo">
+    <h1 class="collage-title">QUEST COLLAGE</h1>
+    <h2 class="giant-texture-text">TEXTURETEXT</h2>
+    <button class="secret-button" id="revealButton">Press Me</button>
+    <img class="small-icon" src="images/icon.png" alt="A small icon">
+    <button id="teleportButton" class="secret-button teleport-button">Go Home</button>
+    <script>
+      
+    const button = document.getElementById('revealButton');
+    const body = document.body; // Reference to the body element
+
+    function handleButtonClick() {
+        
+        // 1. Start the filter effect
+        body.classList.add('rgb-filter');
+        button.textContent = "FILTER ON! (5s)";
+        button.disabled = true; // Disable clicking during the effect
+
+        // 2. Set a timer to stop the effect after 5 seconds (5000ms)
+        setTimeout(() => {
+            // Stop the filter effect
+            body.classList.remove('rgb-filter'); 
+            
+            // Restore the button state and text
+            button.textContent = "Press Me";
+            button.disabled = false;
+        }, 5000); // Effect duration in milliseconds
+    }
+
+    button.addEventListener('click', handleButtonClick);
+
+    const teleportButton = document.getElementById('teleportButton');
+
+    teleportButton.addEventListener('click', () => {
+    // Scrolls the window instantly to the top-left corner (0, 0)
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth' // Optional: for a smooth scroll back
+        });
+    });
+</script>
+
+    </script>
+    
+</body>
+</html>
