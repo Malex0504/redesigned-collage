@@ -1,29 +1,23 @@
-/* style.css */
-
-/* style.css */
-
 body {
-    /* Retain the huge canvas size for the collage elements to sit on */
     width: 6000px;
     height: 4000px;
     position: relative;
     margin: 0;
-    background-image: url('images/cool-background.jpg'); 
-    background-size: cover; 
+    background-image: url('images/cool-background.jpg');
+    background-size: cover;
     background-position: center center;
-    background-attachment: fixed; 
+    background-attachment: fixed;
     background-repeat: no-repeat;
-    background-color: transparent; 
+    background-color: transparent;
 }
-/* Positioning the cat GIF */
+
 .cat-gif {
   position: absolute;
   top: 1050px;
   left: 1200px;
-  z-index: 10; /* Higher number = on top */
+  z-index: 10;
 }
 
-/* Positioning the text message */
 .secret-message {
   position: absolute;
   top: 900px;
@@ -33,30 +27,29 @@ body {
   color: darkblue;
 }
 
-/* Positioning the larger image */
 .big-image {
   position: absolute;
   top: 350px;
   left: 1100px;
   width: 500px;
-  z-index: 5; /* Lower number = underneath */
-}
-  .collage-title {
-    position: absolute;
-    top: 50px;       /* Place near the top */
-    left: 500px;     /* Central-left area */
-    font-size: 150pt;
-    font-weight: bold;
-    color: rgba(255, 0, 0, 0.2); /* Semi-transparent Red */
-    z-index: 20;     /* Put it above the cat (z-index: 10) */
-    transform: rotate(-5deg); /* Tilt it for a collage effect */
+  z-index: 5;
 }
 
-/* Positioning the secret button */
+.collage-title {
+    position: absolute;
+    top: 50px;
+    left: 500px;
+    font-size: 150pt;
+    font-weight: bold;
+    color: rgba(255, 0, 0, 0.2);
+    z-index: 20;
+    transform: rotate(-5deg);
+}
+
 .secret-button {
     position: absolute;
-    top: 3500px;     /* Way down near the bottom of the canvas */
-    left: 4500px;    /* Way over to the right of the canvas */
+    top: 3500px;
+    left: 4500px;
     padding: 20px;
     background: black;
     color: yellow;
@@ -64,19 +57,15 @@ body {
     z-index: 15;
 }
 
-/* Positioning the small icon */
 .small-icon {
     position: absolute;
-    top: 400px;      /* Close to the cat and big image */
+    top: 400px;
     left: 1150px;
     width: 50px;
     height: 50px;
-    z-index: 12;     /* Squeeze it between the cat (10) and title (20) */
+    z-index: 12;
 }
 
-/* style.css (MODIFYING existing rules) */
-
-/* Positioning the text message */
 .secret-message {
     position: absolute;
     top: 900px;
@@ -84,17 +73,11 @@ body {
     font-size: 24px;
     font-family: monospace;
     color: darkblue;
-    /* 💥 MODIFICATION: Hide it by default 💥 */
     opacity: 0;
-    transition: opacity 0.5s; /* Smooth transition */
+    transition: opacity 0.5s;
 }
 
-/* 💥 NEW RULE: Reveal the secret when the big image is hovered 💥 */
 .big-image:hover ~ .secret-message {
-    /*
-     * The `~` (general sibling combinator) selects the .secret-message
-     * that follows the hovered .big-image in the HTML.
-     */
     opacity: 1;
 }
 
@@ -109,154 +92,136 @@ body {
     animation-duration: 2s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
-    filter: hue-rotate(0deg); 
-    /* ❌ Make sure you do NOT have background-color or opacity here */
-    background-color: transparent; 
+    filter: hue-rotate(0deg);
+    background-color: transparent;
 }
 
 .new-icon {
     position: absolute;
-    top: 1500px;  /* 1500 pixels down */
-    left: 450px;  /* 450 pixels over */
+    top: 1500px;
+    left: 450px;
     width: 150px;
-    z-index: 25;  /* Place this above most existing elements */
-    transform: scale(1.5); /* Make it 50% larger than its original size */
+    z-index: 25;
+    transform: scale(1.5);
 }
 
-/* Positioning the new GIF */
 #floating-gif {
     position: absolute;
-    top: 3200px;  /* Way down near the bottom of the canvas */
-    right: 100px; /* Position relative to the right edge */
+    top: 3200px;
+    right: 100px;
     width: 200px;
-    z-index: 50;  /* Make this one appear on the very top layer */
-    transform: rotate(10deg); /* Give it a slight rotation */
+    z-index: 50;
+    transform: rotate(10deg);
 }
 
-/* Positioning a large, low-level collage piece */
 .large-collage-piece {
     position: absolute;
-    top: 1000px; 
-    left: 2000px; /* Well into the horizontal scroll area */
-    width: 3000px; /* Very wide piece */
-    opacity: 0.4;  /* Make it translucent */
-    z-index: 2;    /* Put it behind the main cat and text elements */
+    top: 1000px;
+    left: 2000px;
+    width: 3000px;
+    opacity: 0.4;
+    z-index: 2;
 }
 
 .quest-path {
     position: absolute;
     top: 500px;
     left: 100px;
-    /* Define the path's dimensions and style */
-    width: 5000px; /* Stretch it almost all the way across */
-    height: 5px; /* Make it a thin line */
-    background-color: rgba(255, 255, 255, 0.4); /* Translucent white line */
-    z-index: 4; /* Put it behind your big image (z-index: 5) but above the background */
-    transform: rotate(-10deg); /* Rotate for a more dynamic "path" effect */
+    width: 5000px;
+    height: 5px;
+    background-color: rgba(255, 255, 255, 0.4);
+    z-index: 4;
+    transform: rotate(-10deg);
 }
 
 .teleport-button {
-    top: 3800px; 
-    left: 5500px; 
-    background: #4CAF50; 
+    top: 3800px;
+    left: 5500px;
+    background: #4CAF50;
     color: white;
 }
 
 .giant-texture-text {
     position: absolute;
-    top: 2500px; 
-    left: 1500px; 
-    font-size: 500pt; 
+    top: 2500px;
+    left: 1500px;
+    font-size: 500pt;
     font-weight: 900;
     color: white;
-    opacity: 0.05; 
-    pointer-events: none; 
-    z-index: 1; 
+    opacity: 0.05;
+    pointer-events: none;
+    z-index: 1;
     transform: rotate(15deg);
 }
 
 .tiled-stamp-area {
     position: absolute;
-    top: 1000px; 
-    left: 3000px; 
-    width: 2000px; /* Make the repeating area 2000px wide */
-    height: 1500px; /* And 1500px tall */
-    
-    /* 🔑 FIX: Use a small image and set it to repeat */
-    background-image: url('images/small-star.png'); /* Use your small icon image */
+    top: 1000px;
+    left: 3000px;
+    width: 2000px;
+    height: 1500px;
+    background-image: url('images/small-star.png');
     background-repeat: repeat;
-    
-    opacity: 0.3; 
-    z-index: 3; /* Placed below the path, above the giant text */
+    opacity: 0.3;
+    z-index: 3;
 }
 
 .boss-reward-image {
     position: absolute;
-    top: 3000px; /* Near the bottom */
-    left: 5000px; /* Near the far right edge */
+    top: 3000px;
+    left: 5000px;
     width: 800px;
     border: 10px solid gold;
     z-index: 40;
-    /* Optional: Animate it slightly to draw attention */
     animation: pulse 2s infinite alternate;
 }
 
-/* Optional: Add a simple animation to draw attention */
 @keyframes pulse {
     0% { transform: scale(1); }
     100% { transform: scale(1.05); }
 }
 
-/* style.css (add these new sections) */
-
-/* 1. Mysterious Portal */
 .mysterious-portal {
     position: absolute;
-    top: 200px; /* Near the top, far left */
+    top: 200px;
     left: 200px;
     width: 300px;
-    z-index: 30; /* Fairly high, above many elements */
-    opacity: 0.8; /* Slightly transparent */
-    transform: rotate(20deg); /* Angled for a dynamic look */
+    z-index: 30;
+    opacity: 0.8;
+    transform: rotate(20deg);
 }
 
-/* 2. Floating Island */
 .floating-island {
     position: absolute;
-    top: 1800px; /* Far down, center-ish */
+    top: 1800px;
     left: 2500px;
     width: 700px;
-    z-index: 18; /* Sits between some existing layers (e.g., above secret button at 15) */
-    filter: blur(2px); /* Slightly blurred to suggest distance */
+    z-index: 18;
+    filter: blur(2px);
 }
 
-/* 3. Ancient Symbol */
 .ancient-symbol {
     position: absolute;
-    top: 4600px; /* Very close to the bottom edge */
-    right: 5px; /* Close to the right edge */
+    top: 4600px;
+    right: 5px;
     width: 100px;
-    z-index: 45; /* Quite high, could be a secret reveal */
-    transform: scale(0.7); /* Smaller than original */
-    transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+    z-index: 45;
+    transform: scale(0.7);
+    transition: transform 0.3s ease-in-out;
 }
 
-/* Add a hover effect for the Ancient Symbol for a secret */
 .ancient-symbol:hover {
-    transform: scale(1.2) rotate(360deg); /* Grows and spins on hover */
+    transform: scale(1.2) rotate(360deg);
     cursor: pointer;
 }
 
-/* Define the base style for all details */
 .detail-dot-a, .detail-dot-b, .detail-dot-c, .detail-dot-d {
     position: absolute;
     width: 25px;
     z-index: 35;
-    /* Optional: Make it blink to draw the eye */
-    animation: blink 1.5s infinite alternate; 
+    animation: blink 1.5s infinite alternate;
 }
 
-/* Position each dot in a far-off quadrant */
 .detail-dot-a { top: 300px; left: 5000px; }
 .detail-dot-b { top: 2200px; left: 100px; }
 .detail-dot-c { top: 1500px; left: 5900px; }
@@ -270,15 +235,13 @@ body {
 .scrambled-text {
     position: absolute;
     top: 800px;
-    left: 4000px; /* Far to the right */
+    left: 4000px;
     width: 1500px;
     padding: 20px;
-    
     font-size: 40pt;
     font-family: sans-serif;
     line-height: 1.2;
-    color: rgba(0, 0, 0, 0.4); /* Dark, semi-transparent text */
-    
+    color: rgba(0, 0, 0, 0.4);
     z-index: 10;
-    transform: rotate(3deg) scale(0.8); /* Tilt and slightly shrink it */
+    transform: rotate(3deg) scale(0.8);
 }
